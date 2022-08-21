@@ -41,6 +41,6 @@ dependencies {
     api "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     //Tests
-    testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
+    testApi "junit:junit:$junit_version"
+    androidTestApi "androidx.test.ext:junit:$ext_junit_version"
 }
