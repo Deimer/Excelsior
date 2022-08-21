@@ -1,7 +1,8 @@
-package test.deymer.excelsior
+package test.deymer.excelsior.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import test.deymer.excelsior.R
 
 class MainActivity: AppCompatActivity() {
 

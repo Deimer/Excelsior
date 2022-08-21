@@ -40,32 +40,34 @@ android {
 }
 
 dependencies {
+    //Module
+    api project(path: ':usecase')
     //Kotlin core
-    implementation "androidx.core:core-ktx:$core_ktx"
+    api "androidx.core:core-ktx:$core_ktx"
     //Design
-    implementation 'androidx.appcompat:appcompat:1.5.0'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    api 'androidx.appcompat:appcompat:1.5.0'
+    api 'com.google.android.material:material:1.6.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
     //AndroidX legacy
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    api "androidx.legacy:legacy-support-v4:1.0.0"
     //Animation
-    implementation "com.daimajia.easing:library:2.0@aar"
-    implementation "com.daimajia.androidanimations:library:2.3@aar"
-    implementation "com.airbnb.android:lottie:$lottie_version"
+    api "com.daimajia.easing:library:2.0@aar"
+    api "com.daimajia.androidanimations:library:2.3@aar"
+    api "com.airbnb.android:lottie:$lottie_version"
     //Media
-    implementation "io.coil-kt:coil:$coil_version"
+    api "io.coil-kt:coil:$coil_version"
     //Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    api "androidx.navigation:navigation-ui-ktx:$nav_version"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
     //Lifecycle ktx
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version_livedata"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version_livedata"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version_livedata"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version_livedata"
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
+    api "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     //Tests
-    testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    testApi "junit:junit:$junit_version"
+    androidTestApi "androidx.test.ext:junit:$ext_junit_version"
+    androidTestApi "androidx.test.espresso:espresso-core:$espresso_version"
 }
