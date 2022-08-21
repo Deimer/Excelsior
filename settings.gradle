@@ -16,3 +16,4 @@ rootProject.name = "Excelsior"
 include ':app'
 include ':network'
 include ':datasource'
+include ':database'

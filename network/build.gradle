@@ -41,17 +41,16 @@ android {
 
 dependencies {
     //Kotlin core
-    implementation "androidx.core:core-ktx:$core_ktx"
+    api "androidx.core:core-ktx:$core_ktx"
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_version"
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
+    api "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     //Tests
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 }
