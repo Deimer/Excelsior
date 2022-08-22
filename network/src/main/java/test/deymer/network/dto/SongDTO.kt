@@ -22,5 +22,7 @@ data class SongDTO(
     @SerializedName("wrapperType")
     val wrapperType: String,
     @SerializedName("previewUrl")
-    val previewUrl: String
+    val previewUrl: String,
+    @SerializedName("primaryGenreName")
+    val primaryGenreName: String
 )

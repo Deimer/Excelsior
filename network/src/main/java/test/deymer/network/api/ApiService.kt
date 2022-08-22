@@ -2,6 +2,9 @@ package test.deymer.network.api
 
 import retrofit2.http.GET
 import retrofit2.http.Query
+import test.deymer.network.constants.NetworkConstants.DEFAULTS.DEFAULT_ENTITY
+import test.deymer.network.constants.NetworkConstants.DEFAULTS.DEFAULT_LIMIT
+import test.deymer.network.constants.NetworkConstants.DEFAULTS.DEFAULT_MEDIA_TYPE
 import test.deymer.network.constants.NetworkConstants.QUERIES.ENTITY
 import test.deymer.network.constants.NetworkConstants.QUERIES.ID
 import test.deymer.network.constants.NetworkConstants.QUERIES.LIMIT
@@ -16,13 +19,13 @@ interface ApiService {
     @GET(URLs.SEARCH_PATH)
     fun searchSongs(
         @Query(TERM) term: String,
-        @Query(LIMIT) limit: Int,
-        @Query(MEDIA_TYPE) mediaType: String
-    ): BaseResponseDTO<SongDTO>
+        @Query(LIMIT) limit: Int = DEFAULT_LIMIT,
+        @Query(MEDIA_TYPE) mediaType: String = DEFAULT_MEDIA_TYPE
+    ): BaseResponseDTO<List<SongDTO>>
 
     @GET(URLs.LOOKUP_PATH)
     fun getSongDetail(
         @Query(ID) id: Int,
-        @Query(ENTITY) entity: String
-    ): BaseResponseDTO<SongDTO>
+        @Query(ENTITY) entity: String = DEFAULT_ENTITY
+    ): BaseResponseDTO<List<SongDTO>>
 }

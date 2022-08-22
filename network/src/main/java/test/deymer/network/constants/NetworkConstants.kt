@@ -4,6 +4,9 @@ object NetworkConstants {
 
     object DEFAULTS {
         const val DEFAULT_TIMEOUT = 10L
+        const val DEFAULT_LIMIT = 20
+        const val DEFAULT_MEDIA_TYPE = "music"
+        const val DEFAULT_ENTITY = "song"
     }
 
     object URLs {
