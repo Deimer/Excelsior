@@ -3,26 +3,36 @@ package test.deymer.network.dto
 import com.google.gson.annotations.SerializedName
 
 data class SongDTO(
-    @SerializedName("artistId")
-    val artistId: Int,
+    @SerializedName("trackId")
+    val trackId: String?,
     @SerializedName("trackName")
-    val trackName: String,
+    val trackName: String?,
+    @SerializedName("artistId")
+    val artistId: Int?,
     @SerializedName("artistName")
-    val artistName: String,
+    val artistName: String?,
+    @SerializedName("trackPrice")
+    val trackPrice: Float?,
+    @SerializedName("releaseDate")
+    val releaseDate: String?,
     @SerializedName("artworkUrl60")
-    val albumImageSmall: String,
+    val albumImageSmall: String?,
     @SerializedName("artworkUrl100")
-    val albumImageBig: String,
+    val albumImageBig: String?,
     @SerializedName("collectionName")
-    val albumName: String,
+    val albumName: String?,
     @SerializedName("collectionId")
-    val collectionId: Int,
+    val collectionId: Int?,
     @SerializedName("collectionName")
-    val collectionName: String,
+    val collectionName: String?,
+    @SerializedName("collectionPrice")
+    val collectionPrice: Float?,
+    @SerializedName("currency")
+    val currency: String?,
     @SerializedName("wrapperType")
-    val wrapperType: String,
+    val wrapperType: String?,
     @SerializedName("previewUrl")
-    val previewUrl: String,
+    val previewUrl: String?,
     @SerializedName("primaryGenreName")
-    val primaryGenreName: String
+    val primaryGenreName: String?
 )
