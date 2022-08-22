@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class SongDTO(
     @SerializedName("trackId")
-    val trackId: String?,
+    val trackId: Int?,
     @SerializedName("trackName")
     val trackName: String?,
     @SerializedName("artistId")
