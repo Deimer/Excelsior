@@ -13,7 +13,11 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim"
+            app:popEnterAnim="@animator/nav_default_pop_enter_anim" />
     </fragment>
 
     <fragment

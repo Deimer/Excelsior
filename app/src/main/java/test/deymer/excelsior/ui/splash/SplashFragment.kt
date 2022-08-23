@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import test.deymer.excelsior.databinding.FragmentSplashBinding
+import test.deymer.excelsior.utils.setOnSingleClickListener
 
 class SplashFragment: Fragment() {
 
@@ -27,8 +29,13 @@ class SplashFragment: Fragment() {
     }
 
     private fun setupView() {
-
+        initClickListener()
     }
 
-
+    private fun initClickListener() {
+        binding.buttonStart.setOnSingleClickListener {
+            val action = SplashFragmentDirections.actionSplashFragmentToSearchFragment()
+            findNavController().navigate(action)
+        }
+    }
 }
