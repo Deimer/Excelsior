@@ -3,5 +3,8 @@
     <string name="app_name">!Excelsior!</string>
     <string name="title_splash">Technical Test Android</string>
     <string name="start">Start</string>
+    <string name="search">Search</string>
+    <string name="what_you_want_look_for">What do you want to look for?</string>
+    <string name="results">Results</string>
 
 </resources>

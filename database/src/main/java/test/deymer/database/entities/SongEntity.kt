@@ -6,12 +6,11 @@ import androidx.room.PrimaryKey
 import test.deymer.database.constants.DatabaseConstants.Tables
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_AVATAR
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_BACKDROP
+import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_ID
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_NAME
+import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_PRICE
 import test.deymer.database.constants.DatabaseConstants.Columns.ARTIST_ID
 import test.deymer.database.constants.DatabaseConstants.Columns.ARTIST_NAME
-import test.deymer.database.constants.DatabaseConstants.Columns.COLLECTION_ID
-import test.deymer.database.constants.DatabaseConstants.Columns.COLLECTION_NAME
-import test.deymer.database.constants.DatabaseConstants.Columns.COLLECTION_PRICE
 import test.deymer.database.constants.DatabaseConstants.Columns.CURRENCY
 import test.deymer.database.constants.DatabaseConstants.Columns.PREVIEW_URL
 import test.deymer.database.constants.DatabaseConstants.Columns.RELEASE_DATE
@@ -39,14 +38,12 @@ data class SongEntity(
     val albumAvatar: String,
     @ColumnInfo(name = ALBUM_BACKDROP)
     val albumBackdrop: String,
+    @ColumnInfo(name = ALBUM_ID)
+    val albumId: Int,
     @ColumnInfo(name = ALBUM_NAME)
     val albumName: String,
-    @ColumnInfo(name = COLLECTION_ID)
-    val collectionId: Int,
-    @ColumnInfo(name = COLLECTION_NAME)
-    val collectionName: String,
-    @ColumnInfo(name = COLLECTION_PRICE)
-    val collectionPrice: Float,
+    @ColumnInfo(name = ALBUM_PRICE)
+    val albumPrice: Float,
     @ColumnInfo(name = CURRENCY)
     val currency: String,
     @ColumnInfo(name = WRAPPER_TYPE)

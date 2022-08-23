@@ -9,11 +9,33 @@ import com.google.android.material.snackbar.Snackbar
 import test.deymer.excelsior.R
 import java.util.concurrent.atomic.AtomicBoolean
 
+fun View.showOrHide(show: Boolean) {
+    visibility = if (show) View.VISIBLE
+    else View.INVISIBLE
+}
+
+fun View.showOrDisappear(show: Boolean) {
+    visibility = if (show) View.VISIBLE
+    else View.GONE
+}
+
+fun View.hide() {
+    visibility = View.INVISIBLE
+}
+
+fun View.disappear() {
+    visibility = View.GONE
+}
+
+fun View.show() {
+    visibility = View.VISIBLE
+}
+
 fun AppCompatImageView.loadImage(url: String, crossFade: Boolean = true) {
     this.load(url) {
         crossfade(crossFade)
-        placeholder(R.mipmap.ic_launcher)
-        error(R.mipmap.ic_launcher)
+        placeholder(R.drawable.ic_launcher)
+        error(R.drawable.ic_launcher)
     }
 }
 

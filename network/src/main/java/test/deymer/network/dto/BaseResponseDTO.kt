@@ -1,10 +1,10 @@
 package test.deymer.network.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
-class BaseResponseDTO<T>(
-    @SerializedName("resultCount")
+data class BaseResponseDTO<T>(
+    @Json(name="resultCount")
     val resultCount: Int?,
-    @SerializedName("results")
+    @Json(name="results")
     val results: T
 )

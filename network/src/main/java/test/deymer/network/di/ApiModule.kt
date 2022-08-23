@@ -7,8 +7,7 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import test.deymer.network.BuildConfig
 import test.deymer.network.api.ApiService
 import test.deymer.network.constants.NetworkConstants.DEFAULTS.DEFAULT_TIMEOUT
@@ -35,8 +34,7 @@ object ApiModule {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .client(provideOkHttpClientApi())
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }
 

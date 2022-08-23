@@ -14,7 +14,6 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/black</item>
-        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <!--Texts-->
@@ -79,40 +78,67 @@
 
     <!--Cardview-->
 
-    <style name="CardViewStyle">
-        <item name="android:layout_width">@dimen/dimen_width_card</item>
-        <item name="android:layout_height">@dimen/dimen_height_card</item>
+    <style name="BaseCardViewStyle">
+        <item name="android:layout_width">@dimen/dimen_zero</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="cardCornerRadius">@dimen/dimen_dp_8</item>
-        <item name="cardElevation">@dimen/dimen_zero</item>
+        <item name="cardElevation">@dimen/dimen_dp_2</item>
     </style>
 
-    <style name="CardViewTwoStyle" parent="CardViewStyle">
-        <item name="android:layout_width">@dimen/dimen_width_card_two</item>
-        <item name="android:layout_height">@dimen/dimen_height_card_two</item>
+    <style name="CardViewSearchStyle" parent="BaseCardViewStyle">
+        <item name="cardCornerRadius">@dimen/dimen_dp_4</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_12</item>
+        <item name="android:layout_marginStart">@dimen/dimen_dp_24</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_dp_24</item>
+    </style>
+
+    <style name="CardViewSongStyle" parent="BaseCardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_4</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_dp_4</item>
         <item name="cardCornerRadius">@dimen/dimen_dp_12</item>
+        <item name="cardElevation">@dimen/dimen_dp_6</item>
+        <item name="cardBackgroundColor">@color/dark_sienna</item>
+    </style>
+
+    <!--SearchView-->
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_dp_40</item>
+        <item name="android:layout_margin">@dimen/dimen_dp_8</item>
+        <item name="android:drawablePadding">@dimen/dimen_dp_12</item>
+        <item name="android:minHeight">@dimen/dimen_dp_40</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorHint">@color/dark</item>
+        <item name="closeIcon">@drawable/ic_close</item>
+        <item name="searchHintIcon">@drawable/ic_search</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="queryHint">@string/what_you_want_look_for</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="iconifiedByDefault">false</item>
     </style>
 
     <!--RecyclerView-->
 
-    <style name="RecyclerViewStyle">
+    <style name="BaseRecyclerViewStyle">
         <item name="android:layout_width">@dimen/dimen_zero</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:clipToPadding">false</item>
         <item name="android:nestedScrollingEnabled">false</item>
-        <item name="android:paddingStart">@dimen/dimen_dp_24</item>
         <item name="android:layout_marginTop">@dimen/dimen_dp_20</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+        <item name="android:layout_marginStart">@dimen/dimen_dp_24</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_dp_24</item>
     </style>
 
-    <style name="RecyclerViewStyle.Vertical" parent="RecyclerViewStyle">
-        <item name="android:layout_marginTop">@dimen/dimen_dp_24</item>
-        <item name="android:paddingStart">@dimen/dimen_dp_24</item>
-        <item name="android:paddingEnd">@dimen/dimen_dp_8</item>
-        <item name="android:paddingBottom">@dimen/dimen_dp_56</item>
+    <style name="RecyclerViewVerticalStyle" parent="BaseRecyclerViewStyle">
+        <item name="android:layout_marginBottom">@dimen/dimen_dp_56</item>
         <item name="android:orientation">vertical</item>
         <item name="layoutManager">androidx.recyclerview.widget.GridLayoutManager</item>
-        <item name="spanCount">2</item>
     </style>
 
     <!--Buttons-->

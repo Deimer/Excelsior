@@ -45,7 +45,7 @@ dependencies {
     //Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor_version"
-    api "com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version"
+    api "com.squareup.retrofit2:converter-moshi:$retrofit_converter_moshi_version"
     api "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_version"
     //Hilt
     api "com.google.dagger:hilt-android:$hilt_version"

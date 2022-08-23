@@ -17,14 +17,14 @@ import test.deymer.network.dto.SongDTO
 interface ApiService {
 
     @GET(URLs.SEARCH_PATH)
-    fun searchSongs(
+    suspend fun searchSongs(
         @Query(TERM) term: String,
         @Query(LIMIT) limit: Int = DEFAULT_LIMIT,
         @Query(MEDIA_TYPE) mediaType: String = DEFAULT_MEDIA_TYPE
     ): BaseResponseDTO<List<SongDTO>>
 
     @GET(URLs.LOOKUP_PATH)
-    fun getSongDetail(
+    suspend fun getSongDetail(
         @Query(ID) id: Int,
         @Query(ENTITY) entity: String = DEFAULT_ENTITY
     ): BaseResponseDTO<List<SongDTO>>

@@ -1,38 +1,36 @@
 package test.deymer.network.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class SongDTO(
-    @SerializedName("trackId")
+    @Json(name="trackId")
     val trackId: Int?,
-    @SerializedName("trackName")
+    @Json(name="trackName")
     val trackName: String?,
-    @SerializedName("artistId")
+    @Json(name="artistId")
     val artistId: Int?,
-    @SerializedName("artistName")
+    @Json(name="artistName")
     val artistName: String?,
-    @SerializedName("trackPrice")
+    @Json(name="trackPrice")
     val trackPrice: Float?,
-    @SerializedName("releaseDate")
+    @Json(name="releaseDate")
     val releaseDate: String?,
-    @SerializedName("artworkUrl60")
-    val albumImageSmall: String?,
-    @SerializedName("artworkUrl100")
-    val albumImageBig: String?,
-    @SerializedName("collectionName")
-    val albumName: String?,
-    @SerializedName("collectionId")
+    @Json(name="artworkUrl60")
+    val artworkUrl60: String?,
+    @Json(name="artworkUrl100")
+    val artworkUrl100: String?,
+    @Json(name="collectionId")
     val collectionId: Int?,
-    @SerializedName("collectionName")
+    @Json(name="collectionName")
     val collectionName: String?,
-    @SerializedName("collectionPrice")
+    @Json(name="collectionPrice")
     val collectionPrice: Float?,
-    @SerializedName("currency")
+    @Json(name="currency")
     val currency: String?,
-    @SerializedName("wrapperType")
+    @Json(name="wrapperType")
     val wrapperType: String?,
-    @SerializedName("previewUrl")
+    @Json(name="previewUrl")
     val previewUrl: String?,
-    @SerializedName("primaryGenreName")
+    @Json(name="primaryGenreName")
     val primaryGenreName: String?
 )

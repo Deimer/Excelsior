@@ -19,11 +19,10 @@
     <dimen name="dimen_dp_46">46dp</dimen>
     <dimen name="dimen_dp_56">56dp</dimen>
 
-    <dimen name="dimen_height_card">180dp</dimen>
-    <dimen name="dimen_width_card">138dp</dimen>
+    <dimen name="dimen_height_card">100dp</dimen>
+    <dimen name="dimen_width_card">160dp</dimen>
     <dimen name="dimen_margin_card">16dp</dimen>
-    <dimen name="dimen_height_card_two">210dp</dimen>
-    <dimen name="dimen_width_card_two">160dp</dimen>
+    <dimen name="dimen_height_card_song">90dp</dimen>
     <dimen name="dimen_height_buttons">56dp</dimen>
 
 </resources>
