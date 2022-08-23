@@ -1,7 +1,9 @@
 package test.deymer.excelsior.utils
 
+import android.content.Context
 import android.graphics.Color
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import coil.load
@@ -29,6 +31,11 @@ fun View.disappear() {
 
 fun View.show() {
     visibility = View.VISIBLE
+}
+
+fun View.hideKeyboard() {
+    val inputManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    inputManager.hideSoftInputFromWindow(windowToken, 0)
 }
 
 fun AppCompatImageView.loadImage(url: String, crossFade: Boolean = true) {

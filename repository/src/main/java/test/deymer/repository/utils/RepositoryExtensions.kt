@@ -1,17 +1,24 @@
 package test.deymer.repository.utils
 
+import test.deymer.repository.constants.RepositoryConstants.TAGS.TAG_BIG
 import test.deymer.repository.constants.RepositoryConstants.TAGS.TAG_DATE_FORMAT_IN
 import test.deymer.repository.constants.RepositoryConstants.TAGS.TAG_DATE_FORMAT_OUT
 import test.deymer.repository.constants.RepositoryConstants.TAGS.TAG_DATE_FORMAT_OUT_SHORT
 import test.deymer.repository.constants.RepositoryConstants.TAGS.TAG_DATE_UNKNOWN
+import test.deymer.repository.constants.RepositoryConstants.TAGS.TAG_SMALL
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 
 fun Int?.orZero() = this ?: 0
 
 fun Float?.orZero() = this ?: 0F
+
+fun String?.enlargeBackdrop() = this
+    ?.takeIf { it.isNotEmpty() }
+    ?.replace(TAG_SMALL, TAG_BIG)
+    .orEmpty()
 
 fun String?.toHumanDate(): String {
     return this?.let {

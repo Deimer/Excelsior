@@ -15,7 +15,7 @@ fun SongDTO.toEntity(): SongEntity {
         trackPrice = dto.trackPrice.toShortRound(),
         releaseDate = dto.releaseDate.orEmpty(),
         albumAvatar = dto.artworkUrl60.orEmpty(),
-        albumBackdrop = dto.artworkUrl100.orEmpty(),
+        albumBackdrop = dto.artworkUrl100.enlargeBackdrop(),
         albumId = dto.collectionId.orZero(),
         albumName = dto.collectionName.orEmpty(),
         albumPrice = dto.collectionPrice.toShortRound(),

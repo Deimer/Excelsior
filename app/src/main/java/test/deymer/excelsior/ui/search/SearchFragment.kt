@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import dagger.hilt.android.AndroidEntryPoint
 import test.deymer.excelsior.databinding.FragmentSearchBinding
+import test.deymer.excelsior.ui.adapter.SongAdapter
 import test.deymer.excelsior.utils.disappear
+import test.deymer.excelsior.utils.hideKeyboard
 import test.deymer.excelsior.utils.show
 import test.deymer.repository.models.SongModel
 
@@ -42,6 +44,7 @@ class SearchFragment: Fragment() {
 
     private fun initSubscriptionSearch() {
         viewModel.postSearchResults().observe(viewLifecycleOwner) { results ->
+            binding.searchViewSongs.hideKeyboard()
             setupRecycler(results)
         }
     }
@@ -61,8 +64,15 @@ class SearchFragment: Fragment() {
     private fun setupRecycler(results: List<SongModel>) {
         with(binding) {
             groupResults.show()
-            println("results: $results")
+            recyclerviewSongs.apply {
+                layoutManager = LinearLayoutManager(context, VERTICAL, false)
+                adapter = SongAdapter(results) { openSongDetails(it) }
+            }
         }
+    }
+
+    private fun openSongDetails(songId: Int) {
+        println("songId: $songId")
     }
 
     private fun launchSearchKeyword(query: String) {

@@ -45,7 +45,7 @@ class SongRepository @Inject constructor(
         return try {
             val songsSearch = songRemoteDataSource.searchSongs(term).map { it.toEntity() }
             songLocalDataSource.insertSongs(songsSearch)
-            OnResult.Success(songLocalDataSource.fetchSongs().map { it.toModel() })
+            OnResult.Success(songsSearch.map { it.toModel() })
         } catch (ioException: IOException) {
             OnResult.Error(ioException)
         } catch (exception: Exception) {
