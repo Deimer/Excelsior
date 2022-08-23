@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import test.deymer.database.constants.DatabaseConstants.Tables
-import test.deymer.database.constants.DatabaseConstants.Columns.ID
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_AVATAR
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_BACKDROP
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_NAME
@@ -23,9 +22,7 @@ import test.deymer.database.constants.DatabaseConstants.Columns.WRAPPER_TYPE
 
 @Entity(tableName = Tables.SONG_TABLE)
 data class SongEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = ID)
-    val id: Int = 0,
+    @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = TRACK_ID)
     val trackId: Int,
     @ColumnInfo(name = TRACK_NAME)

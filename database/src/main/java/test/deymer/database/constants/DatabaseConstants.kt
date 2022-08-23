@@ -10,7 +10,6 @@ object DatabaseConstants {
     }
 
     object Columns {
-        const val ID = "id"
         const val TRACK_ID = "track_id"
         const val TRACK_NAME = "track_name"
         const val ARTIST_ID = "artist_id"
