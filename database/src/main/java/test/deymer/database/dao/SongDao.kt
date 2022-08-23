@@ -1,12 +1,12 @@
 package test.deymer.database.dao
 
 import androidx.room.Dao
+import androidx.room.Query
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import test.deymer.database.constants.DatabaseConstants.Columns.ID
-import test.deymer.database.constants.DatabaseConstants.Tables.SONG_TABLE
 import test.deymer.database.entities.SongEntity
+import test.deymer.database.constants.DatabaseConstants.Columns.TRACK_ID
+import test.deymer.database.constants.DatabaseConstants.Tables.SONG_TABLE
 
 @Dao
 interface SongDao {
@@ -20,6 +20,6 @@ interface SongDao {
     @Query("SELECT * FROM $SONG_TABLE")
     suspend fun fetchSongs(): List<SongEntity>
 
-    @Query("SELECT * FROM $SONG_TABLE WHERE $ID = :songId")
+    @Query("SELECT * FROM $SONG_TABLE WHERE $TRACK_ID = :songId")
     suspend fun fetchSongById(songId: Int): SongEntity
 }
