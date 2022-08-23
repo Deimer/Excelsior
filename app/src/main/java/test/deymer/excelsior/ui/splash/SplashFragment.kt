@@ -29,4 +29,6 @@ class SplashFragment: Fragment() {
     private fun setupView() {
 
     }
+
+
 }
