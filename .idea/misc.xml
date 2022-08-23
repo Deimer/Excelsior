@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/bkg_button_primary.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable-v24/bkg_splash.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable-v24/bkg_tag_detail.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable-v24/bkg_tag_price.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.262037037037037" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.33" />
       </map>
     </option>
   </component>
