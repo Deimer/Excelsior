@@ -9,7 +9,4 @@ class SongRemoteDataSource @Inject constructor(
 
     override suspend fun searchSongs(term: String) =
         apiService.searchSongs(term).results
-
-    override suspend fun getSongDetail(songId: Int) =
-        apiService.getSongDetail(songId).results
 }

@@ -46,3 +46,23 @@ fun SongEntity.toModel(): SongModel {
         country = entity.country
     )
 }
+
+fun SongDTO.toModel(): SongModel {
+    val dto = this
+    return SongModel(
+        trackId = dto.trackId.orZero(),
+        trackName = dto.trackName.orEmpty().ifEmpty { TAG_NA },
+        genreName = dto.primaryGenreName.orEmpty(),
+        artistId = dto.artistId.orZero(),
+        artistName = dto.artistName.orEmpty(),
+        trackPrice = "${dto.currency} ${dto.trackPrice.orZero()}",
+        releaseDate = dto.releaseDate.toHumanDate(),
+        albumAvatar = dto.artworkUrl100.orEmpty(),
+        albumBackdrop = dto.artworkUrl100.enlargeBackdrop(),
+        albumId = dto.collectionId.orZero(),
+        albumName = dto.collectionName.orEmpty(),
+        albumPrice = "${dto.currency} ${dto.collectionPrice.orZero()}",
+        preview = dto.currency.orEmpty(),
+        country = dto.wrapperType.orEmpty(),
+    )
+}

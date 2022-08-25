@@ -47,7 +47,6 @@ class SearchFragment: Fragment() {
 
     private fun initSubscriptionSearch() {
         viewModel.postSearchResults().observe(viewLifecycleOwner) { results ->
-            binding.searchViewSongs.hideKeyboard()
             setupRecycler(results)
         }
     }
@@ -56,6 +55,7 @@ class SearchFragment: Fragment() {
         binding.searchViewSongs.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let { launchSearchKeyword(query.trim()) }
+                binding.searchViewSongs.hideKeyboard()
                 return true
             }
             override fun onQueryTextChange(query: String?): Boolean {

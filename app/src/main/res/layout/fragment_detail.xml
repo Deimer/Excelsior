@@ -230,10 +230,34 @@
             app:layout_constraintTop_toBottomOf="@+id/text_view_release_date"
             tools:text="Album price: USD 12.90" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_full_album"
+            style="@style/BodyLabelStyle"
+            android:layout_width="@dimen/dimen_zero"
+            android:layout_marginTop="@dimen/dimen_dp_32"
+            android:layout_marginStart="@dimen/dimen_dp_24"
+            android:layout_marginEnd="@dimen/dimen_dp_24"
+            android:elevation="@dimen/dimen_dp_6"
+            android:text="@string/rest_songs_on_album"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_album_price" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_dp_12"
+            style="@style/RecyclerViewHorizontalStyle"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_full_album"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_album"/>
+
         <androidx.legacy.widget.Space
             android:layout_width="@dimen/dimen_zero"
             android:layout_height="@dimen/dimen_dp_56"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_album_price"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerview_album"
             app:layout_constraintStart_toStartOf="@+id/text_view_album_price"
             app:layout_constraintEnd_toEndOf="@+id/text_view_album_price"/>
 

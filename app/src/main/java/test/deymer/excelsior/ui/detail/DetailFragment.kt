@@ -11,9 +11,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import dagger.hilt.android.AndroidEntryPoint
 import test.deymer.excelsior.R
 import test.deymer.excelsior.databinding.FragmentDetailBinding
+import test.deymer.excelsior.ui.adapter.AlbumAdapter
 import test.deymer.excelsior.utils.*
 import test.deymer.repository.models.SongModel
 import java.util.concurrent.TimeUnit
@@ -55,6 +58,7 @@ class DetailFragment: Fragment() {
     private fun setupView() {
         initClickListener()
         initSubscriptionSongDetail()
+        initSubscriptionSongsAlbum()
     }
 
     private fun setupAnimation() {
@@ -85,12 +89,19 @@ class DetailFragment: Fragment() {
         }
     }
 
+    private fun initSubscriptionSongsAlbum() {
+        viewModel.postGetSongs().observe(viewLifecycleOwner) { songList ->
+            setupRecyclerSongsAlbum(songList)
+        }
+    }
+
     private fun setInformation(songDetail: SongModel) {
         with(binding) {
             setupMediaPlayer(songDetail.preview)
             imageViewBackdrop.loadImage(songDetail.albumBackdrop, false)
             imageViewAvatar.loadImage(songDetail.albumAvatar)
             setSongDetails(songDetail)
+            viewModel.launchGetSongsAlbum(songDetail.trackId, songDetail.albumId)
         }
     }
 
@@ -138,6 +149,13 @@ class DetailFragment: Fragment() {
                 lottiePlaying.show()
                 lottiePlay.disappear()
             }
+        }
+    }
+
+    private fun setupRecyclerSongsAlbum(songs: List<SongModel>) {
+        binding.recyclerviewAlbum.apply {
+            layoutManager = LinearLayoutManager(context, HORIZONTAL, false)
+            adapter = AlbumAdapter(songs)
         }
     }
 }

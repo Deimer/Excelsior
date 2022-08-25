@@ -18,7 +18,7 @@ object NetworkConstants {
         const val TERM = "term"
         const val LIMIT = "limit"
         const val MEDIA_TYPE = "mediaType"
-        const val ID = "mediaType"
-        const val ENTITY = "mediaType"
+        const val ID = "id"
+        const val ENTITY = "entity"
     }
 }

@@ -11,5 +11,6 @@
     <string name="album_artist">Artist/Band: %1$s</string>
     <string name="album_release">Release date: %1$s</string>
     <string name="album_price">Album price: %1$s</string>
+    <string name="rest_songs_on_album">Rest of songs on the album</string>
 
 </resources>

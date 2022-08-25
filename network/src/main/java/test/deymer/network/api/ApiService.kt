@@ -24,7 +24,7 @@ interface ApiService {
     ): BaseResponseDTO<List<SongDTO>>
 
     @GET(URLs.LOOKUP_PATH)
-    suspend fun getSongDetail(
+    suspend fun getSongsAlbum(
         @Query(ID) id: Int,
         @Query(ENTITY) entity: String = DEFAULT_ENTITY
     ): BaseResponseDTO<List<SongDTO>>

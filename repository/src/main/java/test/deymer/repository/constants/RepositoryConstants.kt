@@ -10,5 +10,6 @@ object RepositoryConstants {
         const val TAG_NA = "N/A"
         const val TAG_BIG = "500x500bb"
         const val TAG_SMALL = "100x100bb"
+        const val TAG_TRACK = "track"
     }
 }

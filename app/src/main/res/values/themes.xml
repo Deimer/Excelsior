@@ -143,7 +143,16 @@
     <style name="RecyclerViewVerticalStyle" parent="BaseRecyclerViewStyle">
         <item name="android:layout_marginBottom">@dimen/dimen_dp_56</item>
         <item name="android:orientation">vertical</item>
-        <item name="layoutManager">androidx.recyclerview.widget.GridLayoutManager</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="RecyclerViewHorizontalStyle" parent="BaseRecyclerViewStyle">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:nestedScrollingEnabled">false</item>
+        <item name="android:paddingStart">@dimen/dimen_dp_24</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_20</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
     </style>
 
     <!--Buttons-->
