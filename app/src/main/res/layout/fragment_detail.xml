@@ -54,7 +54,7 @@
             android:rotation="180"
             app:layout_constraintBottom_toBottomOf="@+id/image_view_backdrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".35"
+            app:layout_constraintHeight_percent=".33"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -89,6 +89,34 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.cardview.widget.CardView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_playing"
+            android:layout_width="@dimen/dimen_zero"
+            android:layout_height="@dimen/dimen_zero"
+            android:visibility="invisible"
+            android:elevation="@dimen/dimen_dp_8"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/ic_playing"
+            app:layout_constraintTop_toTopOf="@+id/card_view_song"
+            app:layout_constraintStart_toStartOf="@+id/card_view_song"
+            app:layout_constraintEnd_toEndOf="@+id/card_view_song"
+            app:layout_constraintBottom_toBottomOf="@+id/card_view_song"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_play"
+            android:layout_width="@dimen/dimen_zero"
+            android:layout_height="@dimen/dimen_zero"
+            android:elevation="@dimen/dimen_dp_8"
+            android:padding="@dimen/dimen_dp_12"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/ic_play"
+            app:layout_constraintTop_toTopOf="@+id/card_view_song"
+            app:layout_constraintStart_toStartOf="@+id/card_view_song"
+            app:layout_constraintEnd_toEndOf="@+id/card_view_song"
+            app:layout_constraintBottom_toBottomOf="@+id/card_view_song"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_name_song"

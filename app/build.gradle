@@ -51,8 +51,6 @@ dependencies {
     //AndroidX legacy
     api "androidx.legacy:legacy-support-v4:1.0.0"
     //Animation
-    api "com.daimajia.easing:library:2.0@aar"
-    api "com.daimajia.androidanimations:library:2.3@aar"
     api "com.airbnb.android:lottie:$lottie_version"
     //Media
     api "io.coil-kt:coil:$coil_version"
