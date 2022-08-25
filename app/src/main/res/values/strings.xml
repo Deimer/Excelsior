@@ -6,5 +6,10 @@
     <string name="search">Search</string>
     <string name="what_you_want_look_for">What do you want to look for?</string>
     <string name="results">Results</string>
+    <string name="details">Album details</string>
+    <string name="album_name">Album name: %1$s</string>
+    <string name="album_artist">Artist/Band: %1$s</string>
+    <string name="album_release">Release date: %1$s</string>
+    <string name="album_price">Album price: %1$s</string>
 
 </resources>

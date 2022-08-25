@@ -4,6 +4,7 @@ data class SongModel(
     val trackId: Int,
     val trackName: String,
     val trackPrice: String,
+    val genreName: String,
     val artistId: Int,
     val artistName: String,
     val albumId: Int,
@@ -12,5 +13,6 @@ data class SongModel(
     val albumBackdrop: String,
     val albumPrice: String,
     val releaseDate: String,
-    val preview: String
+    val preview: String,
+    val country: String
 )

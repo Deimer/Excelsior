@@ -12,6 +12,8 @@
     <color name="white_80">#CCFFFFFF</color>
     <color name="golden_poppy">#F6C700</color>
     <color name="dark">#181818</color>
+    <color name="dark_80">#CC181818</color>
+    <color name="dark_60">#99181818</color>
     <color name="dark_sienna">#301918</color>
     <color name="navy">#1A2547</color>
 </resources>

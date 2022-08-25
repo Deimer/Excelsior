@@ -38,9 +38,13 @@ fun View.hideKeyboard() {
     inputManager.hideSoftInputFromWindow(windowToken, 0)
 }
 
-fun AppCompatImageView.loadImage(url: String, crossFade: Boolean = true) {
+fun AppCompatImageView.loadImage(
+    url: String,
+    crossFade: Boolean = true
+) {
     this.load(url) {
         crossfade(crossFade)
+        crossfade(600)
         placeholder(R.drawable.ic_launcher)
         error(R.drawable.ic_launcher)
     }

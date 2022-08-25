@@ -24,5 +24,7 @@ object DatabaseConstants {
         const val CURRENCY = "currency"
         const val WRAPPER_TYPE = "wrapper_type"
         const val PREVIEW_URL = "preview_url"
+        const val GENRE = "genre_name"
+        const val COUNTRY = "country"
     }
 }

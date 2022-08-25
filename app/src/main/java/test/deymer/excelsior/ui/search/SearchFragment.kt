@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import dagger.hilt.android.AndroidEntryPoint
@@ -66,13 +69,22 @@ class SearchFragment: Fragment() {
             groupResults.show()
             recyclerviewSongs.apply {
                 layoutManager = LinearLayoutManager(context, VERTICAL, false)
-                adapter = SongAdapter(results) { openSongDetails(it) }
+                adapter = SongAdapter(results, ::openSongDetails)
             }
+            postponeEnterTransition()
+            recyclerviewSongs.doOnPreDraw {
+                startPostponedEnterTransition()
+            }
+            recyclerviewSongs.scrollState
         }
     }
 
-    private fun openSongDetails(songId: Int) {
-        println("songId: $songId")
+    private fun openSongDetails(songId: Int, viewOne: View) {
+        val extras = FragmentNavigatorExtras(
+            viewOne to songId.toString()
+        )
+        val action = SearchFragmentDirections.actionSearchFragmentToDetailFragment(songId)
+        findNavController().navigate(action, extras)
     }
 
     private fun launchSearchKeyword(query: String) {

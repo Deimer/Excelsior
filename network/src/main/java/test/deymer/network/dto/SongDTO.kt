@@ -32,5 +32,7 @@ data class SongDTO(
     @Json(name="previewUrl")
     val previewUrl: String?,
     @Json(name="primaryGenreName")
-    val primaryGenreName: String?
+    val primaryGenreName: String?,
+    @Json(name="country")
+    val country: String?
 )

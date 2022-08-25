@@ -1,6 +1,7 @@
 package test.deymer.excelsior.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import test.deymer.excelsior.databinding.ItemSongResultBinding
@@ -9,7 +10,7 @@ import test.deymer.repository.models.SongModel
 
 class SongAdapter(
     private val songList: List<SongModel>,
-    private val clickCallback: (songId: Int) -> Unit
+    private val clickCallback: (songId: Int, view: View) -> Unit
 ): RecyclerView.Adapter<SongAdapter.ViewHolderSong>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderSong {
@@ -32,18 +33,25 @@ class SongAdapter(
 
     inner class ViewHolderSong(
         private val songBinding: ItemSongResultBinding,
-        private val clickCallback: (songId: Int) -> Unit
+        private val clickCallback: (songId: Int, view: View) -> Unit
     ) : RecyclerView.ViewHolder(songBinding.root) {
 
         fun binding(song: SongModel) {
+            with(songBinding) {
+                setupInformation(song)
+                root.setOnClickListener {
+                    clickCallback.invoke(song.trackId, imageViewAvatar)
+                }
+            }
+        }
+
+        private fun setupInformation(song: SongModel) {
             with(songBinding) {
                 textViewNameSong.text = song.trackName
                 textViewNameAlbum.text = song.albumName
                 textViewNameArtist.text = song.artistName
                 imageViewAvatar.loadImage(song.albumBackdrop)
-                root.setOnClickListener {
-                    clickCallback.invoke(song.trackId)
-                }
+                imageViewAvatar.transitionName = song.trackId.toString()
             }
         }
     }

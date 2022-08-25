@@ -11,7 +11,9 @@ import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_NAME
 import test.deymer.database.constants.DatabaseConstants.Columns.ALBUM_PRICE
 import test.deymer.database.constants.DatabaseConstants.Columns.ARTIST_ID
 import test.deymer.database.constants.DatabaseConstants.Columns.ARTIST_NAME
+import test.deymer.database.constants.DatabaseConstants.Columns.COUNTRY
 import test.deymer.database.constants.DatabaseConstants.Columns.CURRENCY
+import test.deymer.database.constants.DatabaseConstants.Columns.GENRE
 import test.deymer.database.constants.DatabaseConstants.Columns.PREVIEW_URL
 import test.deymer.database.constants.DatabaseConstants.Columns.RELEASE_DATE
 import test.deymer.database.constants.DatabaseConstants.Columns.TRACK_ID
@@ -26,6 +28,8 @@ data class SongEntity(
     val trackId: Int,
     @ColumnInfo(name = TRACK_NAME)
     val trackName: String,
+    @ColumnInfo(name = GENRE)
+    val genreName: String,
     @ColumnInfo(name = ARTIST_ID)
     val artistId: Int,
     @ColumnInfo(name = ARTIST_NAME)
@@ -49,5 +53,7 @@ data class SongEntity(
     @ColumnInfo(name = WRAPPER_TYPE)
     val wrapperType: String,
     @ColumnInfo(name = PREVIEW_URL)
-    val previewUrl: String
+    val previewUrl: String,
+    @ColumnInfo(name = COUNTRY)
+    val country: String
 )

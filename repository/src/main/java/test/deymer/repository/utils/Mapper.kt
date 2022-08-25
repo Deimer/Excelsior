@@ -10,18 +10,20 @@ fun SongDTO.toEntity(): SongEntity {
     return SongEntity(
         trackId = dto.trackId.orZero(),
         trackName = dto.trackName.orEmpty().ifEmpty { TAG_NA },
+        genreName = dto.primaryGenreName.orEmpty(),
         artistId = dto.artistId.orZero(),
         artistName = dto.artistName.orEmpty(),
         trackPrice = dto.trackPrice.toShortRound(),
         releaseDate = dto.releaseDate.orEmpty(),
-        albumAvatar = dto.artworkUrl60.orEmpty(),
+        albumAvatar = dto.artworkUrl100.orEmpty(),
         albumBackdrop = dto.artworkUrl100.enlargeBackdrop(),
         albumId = dto.collectionId.orZero(),
         albumName = dto.collectionName.orEmpty(),
         albumPrice = dto.collectionPrice.toShortRound(),
         currency = dto.currency.orEmpty(),
         wrapperType = dto.wrapperType.orEmpty(),
-        previewUrl = dto.previewUrl.orEmpty()
+        previewUrl = dto.previewUrl.orEmpty(),
+        country = dto.country.orEmpty()
     )
 }
 
@@ -30,6 +32,7 @@ fun SongEntity.toModel(): SongModel {
     return SongModel(
         trackId = entity.trackId,
         trackName = entity.trackName,
+        genreName = entity.genreName,
         artistId = entity.artistId,
         artistName = entity.artistName,
         trackPrice = "${entity.currency} ${entity.trackPrice.orZero()}",
@@ -39,6 +42,7 @@ fun SongEntity.toModel(): SongModel {
         albumId = entity.albumId,
         albumName = entity.albumName,
         albumPrice = "${entity.currency} ${entity.albumPrice}",
-        preview = entity.previewUrl
+        preview = entity.previewUrl,
+        country = entity.country
     )
 }

@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import test.deymer.repository.repositories.song.ISongRepository
+import test.deymer.usecase.song.GetSongByIdUseCase
 import test.deymer.usecase.song.SearchSongUseCase
 
 @Module
@@ -17,4 +18,10 @@ object UseCaseModule {
     fun provideSearchSongUseCase(
         songRepository: ISongRepository
     ) = SearchSongUseCase(songRepository)
+
+    @Provides
+    @ActivityRetainedScoped
+    fun provideGetSongByIdUseCase(
+        songRepository: ISongRepository
+    ) = GetSongByIdUseCase(songRepository)
 }
