@@ -11,4 +11,6 @@ interface ISongLocalDataSource {
     suspend fun fetchSongs(): List<SongEntity>
 
     suspend fun fetchSongById(songId: Int): SongEntity
+
+    suspend fun searchSongs(term: String): List<SongEntity>
 }

@@ -38,7 +38,7 @@ class SongRepository @Inject constructor(
                 songLocalDataSource.insertSongs(songsSearch)
                 songsSearch
             } else {
-                songLocalDataSource.fetchSongs()
+                songLocalDataSource.searchSongs(term)
             }
             OnResult.Success(data.map { it.toModel() })
         } catch (ioException: IOException) {

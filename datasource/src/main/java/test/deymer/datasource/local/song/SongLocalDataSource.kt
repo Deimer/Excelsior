@@ -21,4 +21,7 @@ class SongLocalDataSource @Inject constructor(
 
     override suspend fun fetchSongById(songId: Int) =
         songDao.fetchSongById(songId)
+
+    override suspend fun searchSongs(term: String) =
+        songDao.searchSong("%$term%")
 }
