@@ -31,10 +31,10 @@ class SongRepository @Inject constructor(
         }
     }
 
-    override suspend fun searchSong(term: String): OnResult<List<SongModel>> {
+    override suspend fun searchSong(term: String, offset: Int): OnResult<List<SongModel>> {
         return try {
             val data = if(checkNetworkHelper.isDeviceOnline()) {
-                val songsSearch = songRemoteDataSource.searchSongs(term).map { it.toEntity() }
+                val songsSearch = songRemoteDataSource.searchSongs(term, offset).map { it.toEntity() }
                 songLocalDataSource.insertSongs(songsSearch)
                 songsSearch
             } else {

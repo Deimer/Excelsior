@@ -5,6 +5,7 @@ import test.deymer.network.dto.SongDTO
 interface ISongRemoteDataSource {
 
     suspend fun searchSongs(
-        term: String
+        term: String,
+        offset: Int
     ): List<SongDTO>
 }

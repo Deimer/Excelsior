@@ -9,5 +9,5 @@ interface ISongRepository {
 
     suspend fun fetchSongById(songId: Int): OnResult<SongModel>
 
-    suspend fun searchSong(term: String): OnResult<List<SongModel>>
+    suspend fun searchSong(term: String, offset: Int): OnResult<List<SongModel>>
 }

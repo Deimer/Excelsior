@@ -7,6 +7,6 @@ class SearchSongUseCase @Inject constructor(
     private val songRepository: ISongRepository
 ) {
 
-    suspend fun invoke(term: String) =
-        songRepository.searchSong(term)
+    suspend fun invoke(term: String, offset: Int) =
+        songRepository.searchSong(term, offset)
 }

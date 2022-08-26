@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import dagger.hilt.android.AndroidEntryPoint
 import test.deymer.excelsior.databinding.FragmentSearchBinding
 import test.deymer.excelsior.ui.adapter.SongAdapter
+import test.deymer.excelsior.utils.buildSnackBar
 import test.deymer.excelsior.utils.disappear
 import test.deymer.excelsior.utils.hideKeyboard
 import test.deymer.excelsior.utils.show
@@ -42,12 +43,19 @@ class SearchFragment: Fragment() {
 
     private fun setupView() {
         initSubscriptionSearch()
+        initSubscriptionError()
         setupSearchView()
     }
 
     private fun initSubscriptionSearch() {
         viewModel.postSearchResults().observe(viewLifecycleOwner) { results ->
             setupRecycler(results)
+        }
+    }
+
+    private fun initSubscriptionError() {
+        viewModel.postShowError().observe(viewLifecycleOwner) { error ->
+            binding.recyclerviewSongs.buildSnackBar(error)
         }
     }
 
@@ -66,6 +74,7 @@ class SearchFragment: Fragment() {
 
     private fun setupRecycler(results: List<SongModel>) {
         with(binding) {
+            lottieLoading.disappear()
             groupResults.show()
             recyclerviewSongs.apply {
                 layoutManager = LinearLayoutManager(context, VERTICAL, false)
@@ -90,6 +99,7 @@ class SearchFragment: Fragment() {
     private fun launchSearchKeyword(query: String) {
         with(binding) {
             groupResults.disappear()
+            lottieLoading.show()
             viewModel.launchSearchSong(query)
         }
     }

@@ -7,6 +7,6 @@ class SongRemoteDataSource @Inject constructor(
     private val apiService: ApiService
 ): ISongRemoteDataSource {
 
-    override suspend fun searchSongs(term: String) =
-        apiService.searchSongs(term).results
+    override suspend fun searchSongs(term: String, offset: Int) =
+        apiService.searchSongs(term = term, offset = offset).results
 }

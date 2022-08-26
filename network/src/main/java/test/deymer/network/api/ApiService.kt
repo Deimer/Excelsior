@@ -9,6 +9,7 @@ import test.deymer.network.constants.NetworkConstants.QUERIES.ENTITY
 import test.deymer.network.constants.NetworkConstants.QUERIES.ID
 import test.deymer.network.constants.NetworkConstants.QUERIES.LIMIT
 import test.deymer.network.constants.NetworkConstants.QUERIES.MEDIA_TYPE
+import test.deymer.network.constants.NetworkConstants.QUERIES.OFFSET
 import test.deymer.network.constants.NetworkConstants.QUERIES.TERM
 import test.deymer.network.constants.NetworkConstants.URLs
 import test.deymer.network.dto.BaseResponseDTO
@@ -20,7 +21,8 @@ interface ApiService {
     suspend fun searchSongs(
         @Query(TERM) term: String,
         @Query(LIMIT) limit: Int = DEFAULT_LIMIT,
-        @Query(MEDIA_TYPE) mediaType: String = DEFAULT_MEDIA_TYPE
+        @Query(MEDIA_TYPE) mediaType: String = DEFAULT_MEDIA_TYPE,
+        @Query(OFFSET) offset: Int
     ): BaseResponseDTO<List<SongDTO>>
 
     @GET(URLs.LOOKUP_PATH)

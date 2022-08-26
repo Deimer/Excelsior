@@ -18,6 +18,8 @@ class SearchViewModel @Inject constructor(
     private val searchSongUseCase: SearchSongUseCase
 ): ViewModel() {
 
+    private var offset = 1
+
     private val songListLiveData: MutableLiveData<List<SongModel>> = MutableLiveData()
     fun postSearchResults(): LiveData<List<SongModel>> = songListLiveData
 
@@ -27,8 +29,9 @@ class SearchViewModel @Inject constructor(
     fun launchSearchSong(term: String) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                when(val results = searchSongUseCase.invoke(term)) {
+                when(val results = searchSongUseCase.invoke(term, offset)) {
                     is OnResult.Success -> {
+                        offset = offset.plus(1)
                         songListLiveData.postValue(results.data)
                     }
                     is OnResult.Error -> {

@@ -59,6 +59,7 @@ class DetailFragment: Fragment() {
         initClickListener()
         initSubscriptionSongDetail()
         initSubscriptionSongsAlbum()
+        initSubscriptionError()
     }
 
     private fun setupAnimation() {
@@ -92,6 +93,12 @@ class DetailFragment: Fragment() {
     private fun initSubscriptionSongsAlbum() {
         viewModel.postGetSongs().observe(viewLifecycleOwner) { songList ->
             setupRecyclerSongsAlbum(songList)
+        }
+    }
+
+    private fun initSubscriptionError() {
+        viewModel.postShowError().observe(viewLifecycleOwner) { error ->
+            binding.recyclerviewAlbum.buildSnackBar(error)
         }
     }
 
