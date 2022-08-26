@@ -1,16 +1,178 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
+
     <!-- Base application theme. -->
-    <style name="Theme.Excelsior" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Excelsior" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/dark</item>
+        <item name="colorPrimaryVariant">@color/dark</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/dark</item>
+        <item name="colorSecondaryVariant">@color/dark</item>
+        <item name="colorOnSecondary">@color/dark</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/dark</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/dark</item>
     </style>
+
+    <!--Texts-->
+
+    <style name="BaseLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="SectionLabelStyle" parent="BaseLabelStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="BigTitleStyle" parent="BaseLabelStyle">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline1</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:lineSpacingExtra">-12sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="GenreLabelStyle" parent="BaseLabelStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TagLabelStyle" parent="BaseLabelStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:background">@drawable/bkg_tag_detail</item>
+        <item name="android:paddingTop">@dimen/dimen_dp_6</item>
+        <item name="android:paddingStart">@dimen/dimen_dp_8</item>
+        <item name="android:paddingEnd">@dimen/dimen_dp_8</item>
+        <item name="android:paddingBottom">@dimen/dimen_dp_6</item>
+    </style>
+
+    <style name="CurrencyLabelStyle" parent="TagLabelStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bkg_tag_price</item>
+        <item name="android:drawableStart">@drawable/ic_currency</item>
+        <item name="android:drawablePadding">@dimen/dimen_dp_2</item>
+    </style>
+
+    <style name="BodyLabelStyle" parent="BaseLabelStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="CationLabelStyle" parent="BaseLabelStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <!--Cardview-->
+
+    <style name="BaseCardViewStyle">
+        <item name="android:layout_width">@dimen/dimen_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">@dimen/dimen_dp_8</item>
+        <item name="cardElevation">@dimen/dimen_dp_2</item>
+    </style>
+
+    <style name="CardViewSearchStyle" parent="BaseCardViewStyle">
+        <item name="cardCornerRadius">@dimen/dimen_dp_4</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_12</item>
+        <item name="android:layout_marginStart">@dimen/dimen_dp_24</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_dp_24</item>
+    </style>
+
+    <style name="CardViewSongStyle" parent="BaseCardViewStyle">
+        <item name="android:layout_width">@dimen/dimen_zero</item>
+        <item name="android:layout_height">@dimen/dimen_height_card</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_4</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_dp_4</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">@dimen/dimen_dp_12</item>
+        <item name="cardElevation">@dimen/dimen_zero</item>
+    </style>
+
+    <style name="CardViewDetailStyle" parent="BaseCardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_zero</item>
+        <item name="cardCornerRadius">@dimen/dimen_dp_16</item>
+        <item name="cardElevation">@dimen/dimen_dp_16</item>
+    </style>
+
+    <!--SearchView-->
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_dp_40</item>
+        <item name="android:layout_margin">@dimen/dimen_dp_8</item>
+        <item name="android:drawablePadding">@dimen/dimen_dp_12</item>
+        <item name="android:minHeight">@dimen/dimen_dp_40</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorHint">@color/dark</item>
+        <item name="closeIcon">@drawable/ic_close</item>
+        <item name="searchHintIcon">@drawable/ic_search</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="queryHint">@string/what_you_want_look_for</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="iconifiedByDefault">false</item>
+    </style>
+
+    <!--RecyclerView-->
+
+    <style name="BaseRecyclerViewStyle">
+        <item name="android:layout_width">@dimen/dimen_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:nestedScrollingEnabled">false</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_20</item>
+    </style>
+
+    <style name="RecyclerViewVerticalStyle" parent="BaseRecyclerViewStyle">
+        <item name="android:layout_marginBottom">@dimen/dimen_dp_56</item>
+        <item name="android:orientation">vertical</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="RecyclerViewHorizontalStyle" parent="BaseRecyclerViewStyle">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:nestedScrollingEnabled">false</item>
+        <item name="android:paddingStart">@dimen/dimen_dp_24</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_20</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <!--Buttons-->
+
+    <style name="BaseButton">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+    <style name="PrimaryButton" parent="BaseButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/dimen_zero</item>
+        <item name="android:paddingTop">@dimen/dimen_dp_12</item>
+        <item name="android:layout_marginStart">@dimen/dimen_dp_24</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_dp_24</item>
+        <item name="android:paddingBottom">@dimen/dimen_dp_12</item>
+        <item name="android:background">@drawable/bkg_button_primary</item>
+    </style>
+
 </resources>
